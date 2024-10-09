@@ -7,6 +7,8 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -402,9 +404,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void getFirstRun() {
         //get current version code
-        int currentVersionCode = BuildConfig.VERSION_CODE;
-        //get saved version code
         int DOESNT_EXIST = -1;
+        int currentVersionCode = DOESNT_EXIST;//BuildConfig.VERSION_CODE;
+        try {
+            PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+            currentVersionCode = pInfo.versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        //get saved version code
         int savedVersionCode = DOESNT_EXIST;
         //first run
         String PREF_VERSION_CODE_KEY = "VERSION_CODE";
