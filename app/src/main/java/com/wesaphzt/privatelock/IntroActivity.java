@@ -6,11 +6,11 @@ import android.view.WindowManager;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.github.paolorotolo.appintro.AppIntro;
-import com.github.paolorotolo.appintro.AppIntroFragment;
-import com.github.paolorotolo.appintro.model.SliderPage;
 
 import static com.wesaphzt.privatelock.service.LockService.mInitialized;
+
+import com.github.appintro.*;
+import com.github.appintro.model.*;
 
 public class IntroActivity extends AppIntro {
 
@@ -27,27 +27,27 @@ public class IntroActivity extends AppIntro {
         sliderPageOne.setTitle(getResources().getString(R.string.slider_page_one_title));
         sliderPageOne.setDescription(getString(R.string.slider_page_one_desc));
         sliderPageOne.setImageDrawable(R.drawable.ic_intro_lock);
-        sliderPageOne.setBgColor(getResources().getColor(R.color.colorPrimary));
+        //sliderPageOne.setBgColor(getResources().getColor(R.color.colorPrimary));
         addSlide(AppIntroFragment.newInstance(sliderPageOne));
 
         SliderPage sliderPageTwo = new SliderPage();
         sliderPageTwo.setTitle(getResources().getString(R.string.slider_page_two_title));
         sliderPageTwo.setDescription(getResources().getString(R.string.slider_page_two_desc));
         sliderPageTwo.setImageDrawable(R.drawable.ic_intro_iris);
-        sliderPageTwo.setBgColor(getResources().getColor(R.color.colorIntroGrey));
+        //sliderPageTwo.setBgColor(getResources().getColor(R.color.colorIntroGrey));
         addSlide(AppIntroFragment.newInstance(sliderPageTwo));
 
         SliderPage sliderPageThree = new SliderPage();
         sliderPageThree.setTitle(getResources().getString(R.string.slider_page_three_title));
         sliderPageThree.setDescription(getResources().getString(R.string.slider_page_three_desc));
         sliderPageThree.setImageDrawable(R.drawable.ic_intro_shield);
-        sliderPageThree.setBgColor(getResources().getColor(R.color.colorIntroGreen));
+        //sliderPageThree.setBgColor(getResources().getColor(R.color.colorIntroGreen));
         addSlide(AppIntroFragment.newInstance(sliderPageThree));
 
         //options
-        setFadeAnimation();
-        showSkipButton(false);
-        setProgressButtonEnabled(true);
+        //setTransformer();
+        setSkipButtonEnabled(false);
+        setProgressBarVisibility(true);
 
         //setBarColor(getResources().getColor(R.color.colorPrimary));
         //setSeparatorColor(getResources().getColor(R.color.white));

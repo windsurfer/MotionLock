@@ -296,7 +296,7 @@ public class LockService extends JobIntentService {
         pendingIntent = PendingIntent.getActivity(context, 0,
                 new Intent(context, MainActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP),
-                0);
+                PendingIntent.FLAG_IMMUTABLE);
 
         //notification stop button
         Intent intentStopAction = new Intent(context, NotificationReceiver.class);
