@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Private Lock</string>
+    <string name="app_name">MotionLock</string>
     <string name="app_desc">Open-Source Lock Privacy</string>
 
     <string name="app_github_dev">https://github.com/wesaphzt</string>
@@ -23,9 +23,9 @@
 
     <!--intro-->
     <string name="slider_page_one_title">@string/app_name</string>
-    <string name="slider_page_one_desc">Private Lock, the perfect companion to help protect your phone privacy and security.</string>
+    <string name="slider_page_one_desc">MotionLock, the perfect companion to help protect your phone privacy and security.</string>
     <string name="slider_page_two_title">Protect Against Theft</string>
-    <string name="slider_page_two_desc">If someone takes your phone while you\'re using it, your phone is unlocked and all your private data is up for grabs.</string>
+    <string name="slider_page_two_desc">If someone takes your phone while you\'re using it, your phone is unlocked and all your data is up for grabs.</string>
     <string name="slider_page_three_title">Always Running</string>
     <string name="slider_page_three_desc">Should something happen, your phone will be quickly locked, dependent on the sensitivity you\'ve set.
         \n\nDon\'t forget to disable battery optimization!</string>
@@ -77,12 +77,7 @@
     <string name="donate_ethereum_image_desc">Ethereum image</string>
     <string name="donate_monero_image_desc">Monero image</string>
 
-    <string name="donate_bitcoin_address">1GCkvAg9oG79niQTbh6EH9rPALQDXKyHKK</string>
-    <string name="donate_litecoin_address">LV687s3wVdhmLZyJMFxomJHdHFXeFAKT5R</string>
-    <string name="donate_ethereum_address">0x785a8804c85b88683a5cce5e53f60878831e5d03</string>
-    <string name="donate_monero_address">43Vijzdt3y42mmT954rSYPjXYabDsjYEV2KyhxfC46JibR2ny9VmRS1fjdJTHxxPVPFE8ajgArwjWfyaRgjh9vcNAwmkfJj</string>
-
-    <string name="donate_note_text">If you find these apps useful, consider supporting me in some way in my mission to create simple, useful, privacy-oriented, open-source apps.</string>
+    <string name="donate_note_text">If you find these apps useful, please consider supporting your local humane society or animal shelter.</string>
     <string name="donate_note_image_desc">Text emoji image</string>
 
     <!--widget-->
