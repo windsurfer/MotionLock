@@ -313,7 +313,7 @@ public class LockService extends JobIntentService {
         if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) {
             notificationBuilder = new NotificationCompat.Builder(this);
             notification = notificationBuilder
-                    .setSmallIcon(R.drawable.ic_lock_white_24dp)
+                    .setSmallIcon(R.drawable.transparent_icon)
                     .setContentTitle(getString(R.string.app_name) + " is running")
                     .setCategory(NotificationCompat.CATEGORY_SERVICE)
                     .setContentIntent(pendingIntent)
@@ -328,7 +328,7 @@ public class LockService extends JobIntentService {
         } else if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N| Build.VERSION.SDK_INT == Build.VERSION_CODES.N_MR1) {
             notificationBuilder = new NotificationCompat.Builder(this, CHANNEL_ID);
             notification = notificationBuilder
-                    .setSmallIcon(R.drawable.ic_lock_white_24dp)
+                    .setSmallIcon(R.drawable.transparent_icon)
                     .setContentTitle(getString(R.string.app_name) + " is running")
                     .setCategory(NotificationCompat.CATEGORY_SERVICE)
                     .setColor(getColor(R.color.colorPrimary))
@@ -350,7 +350,7 @@ public class LockService extends JobIntentService {
 
             notificationBuilder = new NotificationCompat.Builder(this, CHANNEL_ID);
             notification = notificationBuilder
-                    .setSmallIcon(R.drawable.ic_lock_white_24dp)
+                    .setSmallIcon(R.drawable.transparent_icon)
                     .setContentTitle(getString(R.string.app_name) + " is running")
                     .setPriority(PRIORITY_MIN)
                     .setVisibility(NotificationCompat.VISIBILITY_SECRET)
