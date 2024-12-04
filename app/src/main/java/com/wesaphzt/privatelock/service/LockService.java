@@ -301,12 +301,12 @@ public class LockService extends JobIntentService {
         //notification stop button
         Intent intentStopAction = new Intent(context, NotificationReceiver.class);
         intentStopAction.putExtra("lock_service","lock_service_notification");
-        pendingCloseIntent = PendingIntent.getBroadcast(context,0, intentStopAction, PendingIntent.FLAG_UPDATE_CURRENT);
+        pendingCloseIntent = PendingIntent.getBroadcast(context,0, intentStopAction, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         //notification pause button
         Intent intentPauseAction = new Intent(context, PauseReceiver.class);
         intentPauseAction.putExtra("pause_service","pause_service_time");
-        pendingPauseIntent = PendingIntent.getBroadcast(context,0, intentPauseAction, PendingIntent.FLAG_UPDATE_CURRENT);
+        pendingPauseIntent = PendingIntent.getBroadcast(context,0, intentPauseAction, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         NotificationCompat.Builder notificationBuilder;
 

@@ -359,9 +359,13 @@ public class MainActivity extends AppCompatActivity {
             }
         } else if (id == R.id.action_stop) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                NotificationManager notificationManager =
-                        (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-                notificationManager.deleteNotificationChannel(CHANNEL_ID);
+                try {
+                    NotificationManager notificationManager =
+                            (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+                    notificationManager.deleteNotificationChannel(CHANNEL_ID);
+                } catch (java.lang.SecurityException e) {
+                    // to be expected tbh
+                }
 
                 disabled = true;
                 mSensorManager.unregisterListener(activeListener);
