@@ -102,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        DynamicColors.applyToActivitiesIfAvailable(this.getApplication());
 
         super.onCreate(savedInstanceState);
 
