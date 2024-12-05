@@ -1,9 +1,7 @@
 package com.wesaphzt.privatelock.fragments;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
@@ -12,20 +10,17 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.preference.CheckBoxPreference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
+import androidx.preference.SwitchPreference;
 
-import com.google.android.material.color.DynamicColors;
-import com.google.android.material.color.DynamicColorsOptions;
-import com.google.android.material.color.MaterialColors;
 import com.wesaphzt.privatelock.R;
 
 public class FragmentSettings extends PreferenceFragmentCompat {
 
     private Context context;
 
-    private CheckBoxPreference cbRunConstant;
+    private SwitchPreference runConstant;
 
     private SharedPreferences sharedPreferences;
     private SharedPreferences.OnSharedPreferenceChangeListener sharedPreferenceChangeListener;
@@ -42,7 +37,7 @@ public class FragmentSettings extends PreferenceFragmentCompat {
         //this static call will reset default values only on the first read
         PreferenceManager.setDefaultValues(context, R.xml.preferences, false);
 
-        cbRunConstant = (CheckBoxPreference) findPreference("RUN_CONSTANT");
+        runConstant = (SwitchPreference) findPreference("RUN_CONSTANT");
     }
 
     @Override
@@ -85,7 +80,7 @@ public class FragmentSettings extends PreferenceFragmentCompat {
         sharedPreferenceChangeListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             @Override
             public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-                if(key.equals("RUN_CONSTANT") && cbRunConstant.isChecked()) {
+                if(key.equals("RUN_CONSTANT") && runConstant.isChecked()) {
                     Toast.makeText(context, getString(R.string.settings_restart_service_toast), Toast.LENGTH_LONG).show();
                 }
             }
