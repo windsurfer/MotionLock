@@ -31,15 +31,10 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.0-beta01'
     implementation 'com.google.android.material:material:1.13.0-alpha06'
+    implementation 'androidx.activity:activity:1.9.3'
     implementation 'com.android.support:cardview-v7:28.0.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test:runner:1.6.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
-
-    // Java language implementation
-    implementation("androidx.activity:activity:1.9.3")
-    // Kotlin
-    implementation("androidx.activity:activity-ktx:1.9.3")
-
 }
