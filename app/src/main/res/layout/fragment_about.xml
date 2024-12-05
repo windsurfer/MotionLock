@@ -88,7 +88,7 @@
                         android:layout_marginStart="@dimen/activity_margin"
                         android:layout_marginEnd="@dimen/activity_margin_large"
                         android:contentDescription="@string/about_version_image_desc"
-                        android:src="@drawable/ic_about_info_outline_black_24dp" />
+                        android:src="@drawable/ic_about_info_outline_24dp" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -130,7 +130,7 @@
                         android:layout_marginStart="@dimen/activity_margin"
                         android:layout_marginEnd="@dimen/activity_margin_large"
                         android:contentDescription="@string/about_license_image_desc"
-                        android:src="@drawable/ic_about_copyright_black_24dp" />
+                        android:src="@drawable/ic_about_copyright_24dp" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -172,7 +172,7 @@
                         android:layout_marginStart="@dimen/activity_margin"
                         android:layout_marginEnd="@dimen/activity_margin_large"
                         android:contentDescription="@string/about_source_image_desc"
-                        android:src="@drawable/ic_about_code_black_24dp" />
+                        android:src="@drawable/ic_about_code_24dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -222,7 +222,7 @@
                         android:layout_marginStart="@dimen/activity_margin"
                         android:layout_marginEnd="@dimen/activity_margin_large"
                         android:contentDescription="@string/about_developer_image_desc"
-                        android:src="@drawable/ic_about_person_black_24dp" />
+                        android:src="@drawable/ic_about_person_24dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -293,7 +293,7 @@
                         android:layout_marginStart="@dimen/activity_margin"
                         android:layout_marginEnd="@dimen/activity_margin_large"
                         android:contentDescription="@string/about_bug_report_image_desc"
-                        android:src="@drawable/ic_about_bug_report_black_24dp" />
+                        android:src="@drawable/ic_about_bug_report_24dp" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
