@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.TypedArray;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -37,6 +38,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.color.DynamicColors;
 import com.wesaphzt.privatelock.animation.Circle;
 import com.wesaphzt.privatelock.animation.CircleAngleAnimation;
 import com.wesaphzt.privatelock.fragments.FragmentAbout;
@@ -93,13 +95,15 @@ public class MainActivity extends AppCompatActivity {
     private Circle circle;
     private Circle circle_bg;
     //circle color
-    private int circleDefaultR = 88; private int circleDefaultG = 186; private int circleDefaultB = 255;
+    private final int circleDefaultR = 88; private final int circleDefaultG = 186; private final int circleDefaultB = 255;
     int animationDuration = 220;
 
     CircleAngleAnimation animation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        DynamicColors.applyToActivitiesIfAvailable(this.getApplication());
+
         super.onCreate(savedInstanceState);
 
         context = getApplicationContext();
@@ -122,6 +126,21 @@ public class MainActivity extends AppCompatActivity {
             mlp.leftMargin = insets.left;
             mlp.topMargin = insets.top;
             mlp.rightMargin = insets.right;
+            v.setLayoutParams(mlp);
+
+            // Return CONSUMED if you don't want want the window insets to keep passing
+            // down to descendant views.
+            return WindowInsetsCompat.CONSUMED;
+        });
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.last_card), (v, windowInsets) -> {
+            Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
+            // Apply the insets as a margin to the view. This solution sets only the
+            // bottom, left, and right dimensions, but you can apply whichever insets are
+            // appropriate to your layout. You can also update the view padding if that's
+            // more appropriate.
+            ViewGroup.MarginLayoutParams mlp = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
+            mlp.bottomMargin = insets.bottom;
             v.setLayoutParams(mlp);
 
             // Return CONSUMED if you don't want want the window insets to keep passing
@@ -399,7 +418,7 @@ public class MainActivity extends AppCompatActivity {
         if (fragment != null) {
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right, R.anim.enter_from_right, R.anim.exit_to_left);
-            fragmentTransaction.add(R.id.content_main, fragment);
+            fragmentTransaction.replace(R.id.content_main, fragment);
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         }

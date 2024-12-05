@@ -30,7 +30,7 @@
         </activity>
 
         <activity android:name="com.wesaphzt.privatelock.IntroActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <receiver android:name=".receivers.DeviceAdminReceiver"
             android:exported="true"

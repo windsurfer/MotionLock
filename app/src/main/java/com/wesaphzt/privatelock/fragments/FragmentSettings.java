@@ -1,7 +1,10 @@
 package com.wesaphzt.privatelock.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 
@@ -13,6 +16,9 @@ import androidx.preference.CheckBoxPreference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 
+import com.google.android.material.color.DynamicColors;
+import com.google.android.material.color.DynamicColorsOptions;
+import com.google.android.material.color.MaterialColors;
 import com.wesaphzt.privatelock.R;
 
 public class FragmentSettings extends PreferenceFragmentCompat {
@@ -68,8 +74,13 @@ public class FragmentSettings extends PreferenceFragmentCompat {
         //set title
         getActivity().setTitle("Settings");
 
-        //bg color
-        view.setBackgroundColor(getResources().getColor(R.color.white));
+        TypedArray array = context.getTheme().obtainStyledAttributes(new int[] {
+                android.R.attr.colorBackground,
+        });
+        int backgroundColor = array.getColor(0, 0xFF00FF);
+        array.recycle();
+
+        view.setBackgroundColor(backgroundColor);
 
         sharedPreferenceChangeListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             @Override
