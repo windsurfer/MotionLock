@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <uses-permission android:name="android.permission.VIBRATE" />
     <!--pre-oreo-->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -28,7 +30,7 @@
         </activity>
 
         <activity android:name="com.wesaphzt.privatelock.IntroActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <receiver android:name=".receivers.DeviceAdminReceiver"
             android:exported="true"
@@ -53,7 +55,8 @@
         <service
             android:name=".service.LockService"
             android:label="Service"
-            android:permission="android.permission.BIND_JOB_SERVICE" />
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:foregroundServiceType="specialUse" />
 
         <receiver android:name=".widget.LockWidgetProvider"
             android:exported="true">

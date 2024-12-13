@@ -15,17 +15,17 @@
         android:layout_margin="@dimen/_10sdp"
         tools:ignore="UselessParent">
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_margin_large">
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_margin"
                 android:gravity="center_vertical"
-                android:layout_margin="@dimen/activity_margin">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tvSensitivityTitle"
@@ -33,11 +33,12 @@
                     android:layout_height="wrap_content"
                     android:text="@string/main_lock_sensitivity_title"
                     android:textSize="@dimen/_12sdp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp">
 
                     <TextView
                         android:id="@+id/tvSensitivityHigh"
@@ -46,7 +47,7 @@
                         android:layout_alignParentStart="true"
                         android:text="@string/main_lock_sensitivity_title_high"
                         android:textSize="@dimen/_12sdp"
-                        android:textStyle="italic"/>
+                        android:textStyle="italic" />
 
                     <TextView
                         android:id="@+id/tvSensitivityTo"
@@ -69,66 +70,67 @@
 
                 </RelativeLayout>
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_margin"
+                    android:layout_marginEnd="@dimen/activity_margin">
+
+                    <TextView
+                        android:id="@+id/tvSensitivityMinValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="@string/main_seek_low"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <SeekBar
+                        android:id="@+id/sbSensitivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="40"
+                        android:paddingStart="@dimen/_25sdp"
+                        android:paddingEnd="@dimen/_30sdp"></SeekBar>
+
+                    <TextView
+                        android:id="@+id/tvSensitivityMaxValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="end"
+                        android:text="@string/main_seek_high"
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="RelativeOverlap" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvSensitivityActualValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_margin"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="italic|bold" />
+
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_margin"
-            android:layout_marginEnd="@dimen/activity_margin">
-
-            <TextView
-                android:id="@+id/tvSensitivityMinValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:text="@string/main_seek_low"
-                android:textSize="@dimen/_12sdp" />
-
-            <SeekBar
-                android:id="@+id/sbSensitivity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="@dimen/_25sdp"
-                android:paddingEnd="@dimen/_30sdp"
-                android:max="40" >
-            </SeekBar>
-
-            <TextView
-                android:id="@+id/tvSensitivityMaxValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:gravity="end"
-                android:text="@string/main_seek_high"
-                android:textSize="@dimen/_12sdp"
-                tools:ignore="RelativeOverlap" />
-
-        </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
 
 
-        <TextView
-            android:id="@+id/tvSensitivityActualValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/activity_margin"
-            android:textSize="@dimen/_12sdp"
-            android:textStyle="italic|bold"
-            android:text=""
-            android:gravity="center" />
-
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/last_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_margin_large">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_margin"
                 android:gravity="center_vertical"
-                android:layout_margin="@dimen/activity_margin">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tvTestTitle"
@@ -136,106 +138,107 @@
                     android:layout_height="wrap_content"
                     android:text="@string/main_test_lock_sensitivity_title"
                     android:textSize="@dimen/_12sdp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/rlStatTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_margin"
+                        android:layout_marginTop="@dimen/activity_margin_small"
+                        android:layout_marginEnd="@dimen/activity_margin">
+
+                        <TextView
+                            android:id="@+id/tvLastBreachValueTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/stats_last_breach_value_title"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/tvAvgBreachValueTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvLastBreachValueTitle"
+                            android:text="@string/stats_avg_breach_value_title"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/tvHighestBreachValueTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvAvgBreachValueTitle"
+                            android:text="@string/stats_highest_breach_value_title"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlStatValues"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_margin"
+                        android:layout_marginTop="@dimen/activity_margin_small"
+                        android:layout_marginEnd="@dimen/activity_margin"
+                        android:layout_toEndOf="@id/rlStatTitles">
+
+                        <TextView
+                            android:id="@+id/tvLastBreachValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/stats_zero"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/tvAvgBreachValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvLastBreachValue"
+                            android:text="@string/stats_zero"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/tvHighestBreachValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvAvgBreachValue"
+                            android:text="@string/stats_zero"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/activity_margin_large">
+
+                    <com.wesaphzt.privatelock.animation.Circle
+                        android:id="@+id/circle_bg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal" />
+
+                    <com.wesaphzt.privatelock.animation.Circle
+                        android:id="@+id/circle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center_horizontal" />
+
+                </RelativeLayout>
 
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:id="@+id/rlStatTitles"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_margin"
-            android:layout_marginTop="@dimen/activity_margin_small"
-            android:layout_marginEnd="@dimen/activity_margin">
-
-            <TextView
-                android:id="@+id/tvLastBreachValueTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/stats_last_breach_value_title"
-                android:textSize="@dimen/_10sdp" />
-
-            <TextView
-                android:id="@+id/tvAvgBreachValueTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvLastBreachValueTitle"
-                android:text="@string/stats_avg_breach_value_title"
-                android:textSize="@dimen/_10sdp" />
-
-            <TextView
-                android:id="@+id/tvHighestBreachValueTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvAvgBreachValueTitle"
-                android:text="@string/stats_highest_breach_value_title"
-                android:textSize="@dimen/_10sdp" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rlStatValues"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_margin"
-            android:layout_marginTop="@dimen/activity_margin_small"
-            android:layout_marginEnd="@dimen/activity_margin"
-            android:layout_toEndOf="@id/rlStatTitles">
-
-            <TextView
-                android:id="@+id/tvLastBreachValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/stats_zero"
-                android:textSize="@dimen/_10sdp" />
-
-            <TextView
-                android:id="@+id/tvAvgBreachValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvLastBreachValue"
-                android:text="@string/stats_zero"
-                android:textSize="@dimen/_10sdp" />
-
-            <TextView
-                android:id="@+id/tvHighestBreachValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvAvgBreachValue"
-                android:text="@string/stats_zero"
-                android:textSize="@dimen/_10sdp" />
-
-        </RelativeLayout>
-    </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rlCircle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/activity_margin_large"
-            android:layout_gravity="center_horizontal">
-
-            <com.wesaphzt.privatelock.animation.Circle
-                android:id="@+id/circle_bg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:gravity="center_horizontal" />
-
-            <com.wesaphzt.privatelock.animation.Circle
-                android:id="@+id/circle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:gravity="center_horizontal" />
-
-        </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 </RelativeLayout>

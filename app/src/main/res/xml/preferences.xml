@@ -3,18 +3,18 @@
     <PreferenceCategory
         android:title="Lock Service">
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="false"
             android:key="START_ON_BOOT"
             android:title="System start" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="false"
             android:key="HAPTIC_FEEDBACK"
             android:title="Haptic feedback"
             android:summary="Enable haptic feedback (vibration) on lock." />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="false"
             android:key="RUN_CONSTANT"
             android:title="Run service when locked"

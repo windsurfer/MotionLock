@@ -11,11 +11,13 @@ import static com.wesaphzt.privatelock.service.LockService.mInitialized;
 
 import com.github.appintro.*;
 import com.github.appintro.model.*;
+import com.google.android.material.color.DynamicColors;
 
 public class IntroActivity extends AppIntro {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         //fullscreen
